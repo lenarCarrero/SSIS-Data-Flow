@@ -1,0 +1,6 @@
+RutaFotografia
+C:\Apps\SSTD\Laboratorio2\Importar y Exportar Columna\Importar y Exportar Columnas\Imagenes\Paisaje1.jpg
+C:\Apps\SSTD\Laboratorio2\Importar y Exportar Columna\Importar y Exportar Columnas\Imagenes\Paisaje2.jpg
+C:\Apps\SSTD\Laboratorio2\Importar y Exportar Columna\Importar y Exportar Columnas\Imagenes\Paisaje3.jpg
+C:\Apps\SSTD\Laboratorio2\Importar y Exportar Columna\Importar y Exportar Columnas\Imagenes\Paisaje4.jpg
+C:\Apps\SSTD\Laboratorio2\Importar y Exportar Columna\Importar y Exportar Columnas\Imagenes\Paisaje5.jpg

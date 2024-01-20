@@ -1,0 +1,2756 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/13/2023 12:13:25 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-LENAR"
+  DTS:CreatorName="DESKTOP-LENAR\Lenar"
+  DTS:DTSID="{D6E98FBC-F071-49FC-B0F6-F2AF553C4A46}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5209.0"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Agregacion"
+  DTS:PackageType="5"
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{4414CC04-14C8-4CC8-A01B-444226D8708C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Agrupado]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F8C179EE-5D4A-4B10-A00A-39C9FCF37C09}"
+      DTS:ObjectName="Agrupado">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Apps\SSTD\Laboratorio2\Agrupacion\Agrupado.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishProductName"
+              DTS:DTSID="{04EE8F4B-6A1E-47BC-B4E9-DC178304842D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitPrice"
+              DTS:DTSID="{1DDDD8CE-4699-41C6-82E6-245E3DCAA817}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Contar]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0D4C89F8-F156-48B2-849D-C9D39AF3975F}"
+      DTS:ObjectName="Contar">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Apps\SSTD\Laboratorio2\Agrupacion\Contar.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="21"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishProductName"
+              DTS:DTSID="{A2F36C66-2590-4BB8-9C1C-6B4A1C2F5F56}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Contar distinto]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{1C181128-0920-4F73-B81A-D7174C2C8390}"
+      DTS:ObjectName="Contar distinto">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Apps\SSTD\Laboratorio2\Agrupacion\ContarD.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishProductName"
+              DTS:DTSID="{960554FF-091C-4E79-9BEB-ACC6A5300D66}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2F3EEE09-CD4A-479E-B25D-0C3E3177B247}"
+      DTS:ObjectName="LocalHost.AdventureWorksDW2016">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=AdventureWorksDW2016;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Agregacion-{2F3EEE09-CD4A-479E-B25D-0C3E3177B247}LocalHost.AdventureWorksDW2016;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Maximo]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{63420FF5-213C-406B-8111-713972B0D685}"
+      DTS:ObjectName="Maximo">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Apps\SSTD\Laboratorio2\Agrupacion\Maximo.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitPrice"
+              DTS:DTSID="{90FF83F9-218E-4362-8201-ABD2A81CC3BE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Minimo]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{02952F6E-15DB-4A38-8CEF-25D184F050AF}"
+      DTS:ObjectName="Minimo">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Apps\SSTD\Laboratorio2\Agrupacion\Minimo.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitPrice"
+              DTS:DTSID="{800E4A12-26F4-4192-BD51-8FFA11774F6A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Promedio]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0C5870BB-E353-4557-B593-9362C72D9197}"
+      DTS:ObjectName="Promedio">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Apps\SSTD\Laboratorio2\Agrupacion\Promedio.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitPrice"
+              DTS:DTSID="{EAF7A53C-A0BC-484A-830F-B1EE38AD9E11}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Suma]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4D932D38-8C7D-4EA4-B524-801013D14715}"
+      DTS:ObjectName="Suma">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Apps\SSTD\Laboratorio2\Agrupacion\Suma.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitPrice"
+              DTS:DTSID="{34C3EB73-4381-455E-A207-0A6F0B0EF4C1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Agregacion"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{1D68BA41-33C2-47F2-9883-262F624C42EE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Agregacion"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Agregacion\Agrupado"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Agregado;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;3"
+              description="Agrega datos mediante funciones como Average, Sum, Count, Max y Min. Por ejemplo, se agrupan datos para calcular la suma de las ventas por producto o el promedio de visitas por día."
+              name="Agrupado"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número aproximado de claves GROUP BY que produce la agregación. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 de valores de clave. No especificado indica que no se usó ningún valor de KeyScale."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el número exacto de claves GROUP BY que produce la agregación. Si se especifica un valor de KeyScale, el valor de Keys tiene prioridad."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número aproximado de valores distintos de una columna que cuenta la agregación de forma distintiva. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 valores de clave. No especificado indica que no se usa ningún valor de CountDistinctScale."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el número exacto de valores distintos de una columna que cuenta la agregación de forma distintiva. Si se especifica un valor de CountDistinctScale, el valor de CountDistinctKeys tiene prioridad."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje en el que puede ampliarse la memoria durante la agregación. Los valores válidos están comprendidos entre 1 y 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Agregacion\Agrupado.Inputs[Entrada de agregado 1]"
+                  name="Entrada de agregado 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Agregacion\Agrupado.Inputs[Entrada de agregado 1].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      lineageId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[EnglishProductName]" />
+                    <inputColumn
+                      refId="Package\Agregacion\Agrupado.Inputs[Entrada de agregado 1].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      lineageId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Agregacion\Agrupado.Outputs[Salida de agregado 1]"
+                  name="Salida de agregado 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el número aproximado de claves GROUP BY que produce la agregación. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 de valores de clave. No especificado indica que no se usó ningún valor de KeyScale."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Especifica el número exacto de claves GROUP BY que produce la agregación. Si se especifica un valor de KeyScale, el valor de Keys tiene prioridad."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Agregacion\Agrupado.Outputs[Salida de agregado 1].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Agregacion\Agrupado.Outputs[Salida de agregado 1].Columns[EnglishProductName]"
+                      name="EnglishProductName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el id. de la columna de entrada usada en la agregación."
+                          name="AggregationColumnId">#{Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[EnglishProductName]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el tipo de agregación."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica si la columna requiere tratamiento especial porque puede contener datos de tamaño excesivo o porque requiere mayor precisión que el tipo de datos float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación de cadenas."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Agregacion\Agrupado.Outputs[Salida de agregado 1].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Agregacion\Agrupado.Outputs[Salida de agregado 1].Columns[UnitPrice]"
+                      name="UnitPrice">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el id. de la columna de entrada usada en la agregación."
+                          name="AggregationColumnId">#{Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el tipo de agregación."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica si la columna requiere tratamiento especial porque puede contener datos de tamaño excesivo o porque requiere mayor precisión que el tipo de datos float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación de cadenas."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Agregacion\Contar"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Agregado;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;3"
+              description="Agrega datos mediante funciones como Average, Sum, Count, Max y Min. Por ejemplo, se agrupan datos para calcular la suma de las ventas por producto o el promedio de visitas por día."
+              name="Contar"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número aproximado de claves GROUP BY que produce la agregación. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 de valores de clave. No especificado indica que no se usó ningún valor de KeyScale."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el número exacto de claves GROUP BY que produce la agregación. Si se especifica un valor de KeyScale, el valor de Keys tiene prioridad."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número aproximado de valores distintos de una columna que cuenta la agregación de forma distintiva. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 valores de clave. No especificado indica que no se usa ningún valor de CountDistinctScale."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el número exacto de valores distintos de una columna que cuenta la agregación de forma distintiva. Si se especifica un valor de CountDistinctScale, el valor de CountDistinctKeys tiene prioridad."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje en el que puede ampliarse la memoria durante la agregación. Los valores válidos están comprendidos entre 1 y 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Agregacion\Contar.Inputs[Entrada de agregado 1]"
+                  name="Entrada de agregado 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Agregacion\Contar.Inputs[Entrada de agregado 1].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      lineageId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[EnglishProductName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Agregacion\Contar.Outputs[Salida de agregado 1]"
+                  name="Salida de agregado 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el número aproximado de claves GROUP BY que produce la agregación. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 de valores de clave. No especificado indica que no se usó ningún valor de KeyScale."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Especifica el número exacto de claves GROUP BY que produce la agregación. Si se especifica un valor de KeyScale, el valor de Keys tiene prioridad."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Agregacion\Contar.Outputs[Salida de agregado 1].Columns[EnglishProductName]"
+                      dataType="ui8"
+                      lineageId="Package\Agregacion\Contar.Outputs[Salida de agregado 1].Columns[EnglishProductName]"
+                      name="EnglishProductName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el id. de la columna de entrada usada en la agregación."
+                          name="AggregationColumnId">#{Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[EnglishProductName]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el tipo de agregación."
+                          name="AggregationType"
+                          typeConverter="AggregationType">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica si la columna requiere tratamiento especial porque puede contener datos de tamaño excesivo o porque requiere mayor precisión que el tipo de datos float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación de cadenas."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Agregacion\ContarD"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Agregado;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;3"
+              description="Agrega datos mediante funciones como Average, Sum, Count, Max y Min. Por ejemplo, se agrupan datos para calcular la suma de las ventas por producto o el promedio de visitas por día."
+              name="ContarD"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número aproximado de claves GROUP BY que produce la agregación. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 de valores de clave. No especificado indica que no se usó ningún valor de KeyScale."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el número exacto de claves GROUP BY que produce la agregación. Si se especifica un valor de KeyScale, el valor de Keys tiene prioridad."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número aproximado de valores distintos de una columna que cuenta la agregación de forma distintiva. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 valores de clave. No especificado indica que no se usa ningún valor de CountDistinctScale."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el número exacto de valores distintos de una columna que cuenta la agregación de forma distintiva. Si se especifica un valor de CountDistinctScale, el valor de CountDistinctKeys tiene prioridad."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje en el que puede ampliarse la memoria durante la agregación. Los valores válidos están comprendidos entre 1 y 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Agregacion\ContarD.Inputs[Entrada de agregado 1]"
+                  name="Entrada de agregado 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Agregacion\ContarD.Inputs[Entrada de agregado 1].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      lineageId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[EnglishProductName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Agregacion\ContarD.Outputs[Salida de agregado 1]"
+                  name="Salida de agregado 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el número aproximado de claves GROUP BY que produce la agregación. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 de valores de clave. No especificado indica que no se usó ningún valor de KeyScale."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Especifica el número exacto de claves GROUP BY que produce la agregación. Si se especifica un valor de KeyScale, el valor de Keys tiene prioridad."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Agregacion\ContarD.Outputs[Salida de agregado 1].Columns[EnglishProductName]"
+                      dataType="ui4"
+                      lineageId="Package\Agregacion\ContarD.Outputs[Salida de agregado 1].Columns[EnglishProductName]"
+                      name="EnglishProductName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el id. de la columna de entrada usada en la agregación."
+                          name="AggregationColumnId">#{Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[EnglishProductName]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el tipo de agregación."
+                          name="AggregationType"
+                          typeConverter="AggregationType">3</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica si la columna requiere tratamiento especial porque puede contener datos de tamaño excesivo o porque requiere mayor precisión que el tipo de datos float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación de cadenas."
+                          name="AggregationComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el número aproximado de valores distintos de una columna que cuenta la agregación de forma distintiva. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 valores de clave. No especificado indica que no se usa ningún valor de CountDistinctScale."
+                          name="CountDistinctScale">0</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Especifica el número exacto de valores distintos de una columna que cuenta la agregación de forma distintiva. Si se especifica un valor de CountDistinctScale, el valor de CountDistinctKeys tiene prioridad."
+                          name="CountDistinctKeys">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Agregacion\D agrupado"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="D agrupado"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Agregacion\D agrupado.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Agrupado]"
+                  connectionManagerRefId="Package.ConnectionManagers[Agrupado]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Agregacion\D agrupado.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Agregacion\D agrupado.Inputs[Entrada de destino de archivo plano].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      externalMetadataColumnId="Package\Agregacion\D agrupado.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishProductName]"
+                      lineageId="Package\Agregacion\Agrupado.Outputs[Salida de agregado 1].Columns[EnglishProductName]" />
+                    <inputColumn
+                      refId="Package\Agregacion\D agrupado.Inputs[Entrada de destino de archivo plano].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Agregacion\D agrupado.Inputs[Entrada de destino de archivo plano].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Agregacion\Agrupado.Outputs[Salida de agregado 1].Columns[UnitPrice]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Agregacion\D agrupado.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Agregacion\D agrupado.Inputs[Entrada de destino de archivo plano].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Agregacion\D contar"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="D contar"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Agregacion\D contar.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Contar]"
+                  connectionManagerRefId="Package.ConnectionManagers[Contar]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Agregacion\D contar.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Agregacion\D contar.Inputs[Entrada de destino de archivo plano].Columns[EnglishProductName]"
+                      cachedDataType="ui8"
+                      cachedName="EnglishProductName"
+                      externalMetadataColumnId="Package\Agregacion\D contar.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishProductName]"
+                      lineageId="Package\Agregacion\Contar.Outputs[Salida de agregado 1].Columns[EnglishProductName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Agregacion\D contar.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishProductName]"
+                      dataType="ui8"
+                      name="EnglishProductName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Agregacion\D maximo"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="D maximo"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Agregacion\D maximo.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Maximo]"
+                  connectionManagerRefId="Package.ConnectionManagers[Maximo]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Agregacion\D maximo.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Agregacion\D maximo.Inputs[Entrada de destino de archivo plano].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Agregacion\D maximo.Inputs[Entrada de destino de archivo plano].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Agregacion\Maximo.Outputs[Salida de agregado 1].Columns[UnitPrice]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Agregacion\D maximo.Inputs[Entrada de destino de archivo plano].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Agregacion\D minimo"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="D minimo"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Agregacion\D minimo.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Minimo]"
+                  connectionManagerRefId="Package.ConnectionManagers[Minimo]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Agregacion\D minimo.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Agregacion\D minimo.Inputs[Entrada de destino de archivo plano].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Agregacion\D minimo.Inputs[Entrada de destino de archivo plano].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Agregacion\Minimo.Outputs[Salida de agregado 1].Columns[UnitPrice]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Agregacion\D minimo.Inputs[Entrada de destino de archivo plano].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Agregacion\D promedio"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="D promedio"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Agregacion\D promedio.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Promedio]"
+                  connectionManagerRefId="Package.ConnectionManagers[Promedio]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Agregacion\D promedio.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Agregacion\D promedio.Inputs[Entrada de destino de archivo plano].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Agregacion\D promedio.Inputs[Entrada de destino de archivo plano].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Agregacion\Promedio.Outputs[Salida de agregado 1].Columns[UnitPrice]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Agregacion\D promedio.Inputs[Entrada de destino de archivo plano].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Agregacion\D suma"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="D suma"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Agregacion\D suma.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Suma]"
+                  connectionManagerRefId="Package.ConnectionManagers[Suma]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Agregacion\D suma.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Agregacion\D suma.Inputs[Entrada de destino de archivo plano].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Agregacion\D suma.Inputs[Entrada de destino de archivo plano].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Agregacion\Suma.Outputs[Salida de agregado 1].Columns[UnitPrice]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Agregacion\D suma.Inputs[Entrada de destino de archivo plano].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Agregacion\Data"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Data"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DP.EnglishProductName, DPC.EnglishProductCategoryName,
+		DPS.EnglishProductSubcategoryName, FRS.UnitPrice, FRS.SalesAmount
+FROM DimProduct DP INNER JOIN DimProductSubcategory DPS
+ON DP.ProductSubcategoryKey = DPS.ProductCategoryKey
+					INNER JOIN DimProductCategory DPC
+ON DPC.ProductCategoryKey=DPS.ProductCategoryKey
+					INNER JOIN FactResellerSales FRS
+ON FRS.ProductKey=DP.ProductKey</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Agregacion\Data.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishProductName]"
+                      length="50"
+                      lineageId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[EnglishProductName]"
+                      name="EnglishProductName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[EnglishProductCategoryName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishProductCategoryName]"
+                      length="50"
+                      lineageId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[EnglishProductCategoryName]"
+                      name="EnglishProductCategoryName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishProductSubcategoryName]"
+                      length="50"
+                      lineageId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[EnglishProductSubcategoryName]"
+                      name="EnglishProductSubcategoryName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]"
+                      name="UnitPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[SalesAmount]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].ExternalColumns[SalesAmount]"
+                      lineageId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[SalesAmount]"
+                      name="SalesAmount"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishProductCategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductCategoryName" />
+                    <externalMetadataColumn
+                      refId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductSubcategoryName" />
+                    <externalMetadataColumn
+                      refId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].ExternalColumns[SalesAmount]"
+                      dataType="cy"
+                      name="SalesAmount" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Agregacion\Data.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Agregacion\Data.Outputs[Salida de error de origen de OLE DB].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Agregacion\Data.Outputs[Salida de error de origen de OLE DB].Columns[EnglishProductName]"
+                      name="EnglishProductName" />
+                    <outputColumn
+                      refId="Package\Agregacion\Data.Outputs[Salida de error de origen de OLE DB].Columns[EnglishProductCategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Agregacion\Data.Outputs[Salida de error de origen de OLE DB].Columns[EnglishProductCategoryName]"
+                      name="EnglishProductCategoryName" />
+                    <outputColumn
+                      refId="Package\Agregacion\Data.Outputs[Salida de error de origen de OLE DB].Columns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Agregacion\Data.Outputs[Salida de error de origen de OLE DB].Columns[EnglishProductSubcategoryName]"
+                      name="EnglishProductSubcategoryName" />
+                    <outputColumn
+                      refId="Package\Agregacion\Data.Outputs[Salida de error de origen de OLE DB].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Agregacion\Data.Outputs[Salida de error de origen de OLE DB].Columns[UnitPrice]"
+                      name="UnitPrice" />
+                    <outputColumn
+                      refId="Package\Agregacion\Data.Outputs[Salida de error de origen de OLE DB].Columns[SalesAmount]"
+                      dataType="cy"
+                      lineageId="Package\Agregacion\Data.Outputs[Salida de error de origen de OLE DB].Columns[SalesAmount]"
+                      name="SalesAmount" />
+                    <outputColumn
+                      refId="Package\Agregacion\Data.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Agregacion\Data.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Agregacion\Data.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Agregacion\Data.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Agregacion\Dcontard"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="Dcontard"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Agregacion\Dcontard.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Contar distinto]"
+                  connectionManagerRefId="Package.ConnectionManagers[Contar distinto]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Agregacion\Dcontard.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Agregacion\Dcontard.Inputs[Entrada de destino de archivo plano].Columns[EnglishProductName]"
+                      cachedDataType="ui4"
+                      cachedName="EnglishProductName"
+                      externalMetadataColumnId="Package\Agregacion\Dcontard.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishProductName]"
+                      lineageId="Package\Agregacion\ContarD.Outputs[Salida de agregado 1].Columns[EnglishProductName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Agregacion\Dcontard.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishProductName]"
+                      dataType="ui4"
+                      name="EnglishProductName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Agregacion\Maximo"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Agregado;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;3"
+              description="Agrega datos mediante funciones como Average, Sum, Count, Max y Min. Por ejemplo, se agrupan datos para calcular la suma de las ventas por producto o el promedio de visitas por día."
+              name="Maximo"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número aproximado de claves GROUP BY que produce la agregación. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 de valores de clave. No especificado indica que no se usó ningún valor de KeyScale."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el número exacto de claves GROUP BY que produce la agregación. Si se especifica un valor de KeyScale, el valor de Keys tiene prioridad."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número aproximado de valores distintos de una columna que cuenta la agregación de forma distintiva. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 valores de clave. No especificado indica que no se usa ningún valor de CountDistinctScale."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el número exacto de valores distintos de una columna que cuenta la agregación de forma distintiva. Si se especifica un valor de CountDistinctScale, el valor de CountDistinctKeys tiene prioridad."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje en el que puede ampliarse la memoria durante la agregación. Los valores válidos están comprendidos entre 1 y 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Agregacion\Maximo.Inputs[Entrada de agregado 1]"
+                  name="Entrada de agregado 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Agregacion\Maximo.Inputs[Entrada de agregado 1].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      lineageId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Agregacion\Maximo.Outputs[Salida de agregado 1]"
+                  name="Salida de agregado 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el número aproximado de claves GROUP BY que produce la agregación. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 de valores de clave. No especificado indica que no se usó ningún valor de KeyScale."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Especifica el número exacto de claves GROUP BY que produce la agregación. Si se especifica un valor de KeyScale, el valor de Keys tiene prioridad."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Agregacion\Maximo.Outputs[Salida de agregado 1].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Agregacion\Maximo.Outputs[Salida de agregado 1].Columns[UnitPrice]"
+                      name="UnitPrice">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el id. de la columna de entrada usada en la agregación."
+                          name="AggregationColumnId">#{Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el tipo de agregación."
+                          name="AggregationType"
+                          typeConverter="AggregationType">7</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica si la columna requiere tratamiento especial porque puede contener datos de tamaño excesivo o porque requiere mayor precisión que el tipo de datos float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación de cadenas."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Agregacion\Minimo"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Agregado;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;3"
+              description="Agrega datos mediante funciones como Average, Sum, Count, Max y Min. Por ejemplo, se agrupan datos para calcular la suma de las ventas por producto o el promedio de visitas por día."
+              name="Minimo"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número aproximado de claves GROUP BY que produce la agregación. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 de valores de clave. No especificado indica que no se usó ningún valor de KeyScale."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el número exacto de claves GROUP BY que produce la agregación. Si se especifica un valor de KeyScale, el valor de Keys tiene prioridad."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número aproximado de valores distintos de una columna que cuenta la agregación de forma distintiva. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 valores de clave. No especificado indica que no se usa ningún valor de CountDistinctScale."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el número exacto de valores distintos de una columna que cuenta la agregación de forma distintiva. Si se especifica un valor de CountDistinctScale, el valor de CountDistinctKeys tiene prioridad."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje en el que puede ampliarse la memoria durante la agregación. Los valores válidos están comprendidos entre 1 y 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Agregacion\Minimo.Inputs[Entrada de agregado 1]"
+                  name="Entrada de agregado 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Agregacion\Minimo.Inputs[Entrada de agregado 1].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      lineageId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Agregacion\Minimo.Outputs[Salida de agregado 1]"
+                  name="Salida de agregado 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el número aproximado de claves GROUP BY que produce la agregación. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 de valores de clave. No especificado indica que no se usó ningún valor de KeyScale."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Especifica el número exacto de claves GROUP BY que produce la agregación. Si se especifica un valor de KeyScale, el valor de Keys tiene prioridad."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Agregacion\Minimo.Outputs[Salida de agregado 1].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Agregacion\Minimo.Outputs[Salida de agregado 1].Columns[UnitPrice]"
+                      name="UnitPrice">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el id. de la columna de entrada usada en la agregación."
+                          name="AggregationColumnId">#{Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el tipo de agregación."
+                          name="AggregationType"
+                          typeConverter="AggregationType">6</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica si la columna requiere tratamiento especial porque puede contener datos de tamaño excesivo o porque requiere mayor precisión que el tipo de datos float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación de cadenas."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Agregacion\Multidifusión"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multidifusión;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Distribuye cada fila de entrada a cada una de las filas de una o varias salidas. Por ejemplo, se crea una bifurcación de un flujo de datos para realizar una copia de los datos de modo que se puedan enmascarar algunos valores antes de compartirlos con los asociados externos."
+              name="Multidifusión">
+              <inputs>
+                <input
+                  refId="Package\Agregacion\Multidifusión.Inputs[Entrada de Multidifusión 1]"
+                  name="Entrada de Multidifusión 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Agregacion\Multidifusión.Outputs[Salida de Multidifusión 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de Multidifusión 1"
+                  synchronousInputId="Package\Agregacion\Multidifusión.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Agregacion\Multidifusión.Outputs[Salida de multidifusión 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de multidifusión 1"
+                  synchronousInputId="Package\Agregacion\Multidifusión.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Agregacion\Multidifusión.Outputs[Salida de multidifusión 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de multidifusión 2"
+                  synchronousInputId="Package\Agregacion\Multidifusión.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Agregacion\Multidifusión.Outputs[Salida de multidifusión 3]"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de multidifusión 3"
+                  synchronousInputId="Package\Agregacion\Multidifusión.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Agregacion\Multidifusión.Outputs[Salida de multidifusión 4]"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de multidifusión 4"
+                  synchronousInputId="Package\Agregacion\Multidifusión.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Agregacion\Multidifusión.Outputs[Salida de multidifusión 5]"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de multidifusión 5"
+                  synchronousInputId="Package\Agregacion\Multidifusión.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Agregacion\Multidifusión.Outputs[Salida de multidifusión 6]"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de multidifusión 6"
+                  synchronousInputId="Package\Agregacion\Multidifusión.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Agregacion\Multidifusión.Outputs[Salida de multidifusión 7]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de multidifusión 7"
+                  synchronousInputId="Package\Agregacion\Multidifusión.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Agregacion\Multidifusión 1"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multidifusión;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Distribuye cada fila de entrada a cada una de las filas de una o varias salidas. Por ejemplo, se crea una bifurcación de un flujo de datos para realizar una copia de los datos de modo que se puedan enmascarar algunos valores antes de compartirlos con los asociados externos."
+              name="Multidifusión 1">
+              <inputs>
+                <input
+                  refId="Package\Agregacion\Multidifusión 1.Inputs[Entrada de Multidifusión 1]"
+                  name="Entrada de Multidifusión 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Agregacion\Multidifusión 1.Outputs[Salida de Multidifusión 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de Multidifusión 1"
+                  synchronousInputId="Package\Agregacion\Multidifusión 1.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Agregacion\Multidifusión 1.Outputs[Salida de multidifusión 1]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de multidifusión 1"
+                  synchronousInputId="Package\Agregacion\Multidifusión 1.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Agregacion\Multidifusión 2"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multidifusión;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Distribuye cada fila de entrada a cada una de las filas de una o varias salidas. Por ejemplo, se crea una bifurcación de un flujo de datos para realizar una copia de los datos de modo que se puedan enmascarar algunos valores antes de compartirlos con los asociados externos."
+              name="Multidifusión 2">
+              <inputs>
+                <input
+                  refId="Package\Agregacion\Multidifusión 2.Inputs[Entrada de Multidifusión 1]"
+                  name="Entrada de Multidifusión 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Agregacion\Multidifusión 2.Outputs[Salida de Multidifusión 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de Multidifusión 1"
+                  synchronousInputId="Package\Agregacion\Multidifusión 2.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Agregacion\Multidifusión 2.Outputs[Salida de multidifusión 1]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de multidifusión 1"
+                  synchronousInputId="Package\Agregacion\Multidifusión 2.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Agregacion\Multidifusión 3"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multidifusión;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Distribuye cada fila de entrada a cada una de las filas de una o varias salidas. Por ejemplo, se crea una bifurcación de un flujo de datos para realizar una copia de los datos de modo que se puedan enmascarar algunos valores antes de compartirlos con los asociados externos."
+              name="Multidifusión 3">
+              <inputs>
+                <input
+                  refId="Package\Agregacion\Multidifusión 3.Inputs[Entrada de Multidifusión 1]"
+                  name="Entrada de Multidifusión 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Agregacion\Multidifusión 3.Outputs[Salida de Multidifusión 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de Multidifusión 1"
+                  synchronousInputId="Package\Agregacion\Multidifusión 3.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Agregacion\Multidifusión 3.Outputs[Salida de multidifusión 1]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de multidifusión 1"
+                  synchronousInputId="Package\Agregacion\Multidifusión 3.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Agregacion\Multidifusión 4"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multidifusión;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Distribuye cada fila de entrada a cada una de las filas de una o varias salidas. Por ejemplo, se crea una bifurcación de un flujo de datos para realizar una copia de los datos de modo que se puedan enmascarar algunos valores antes de compartirlos con los asociados externos."
+              name="Multidifusión 4">
+              <inputs>
+                <input
+                  refId="Package\Agregacion\Multidifusión 4.Inputs[Entrada de Multidifusión 1]"
+                  name="Entrada de Multidifusión 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Agregacion\Multidifusión 4.Outputs[Salida de Multidifusión 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de Multidifusión 1"
+                  synchronousInputId="Package\Agregacion\Multidifusión 4.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Agregacion\Multidifusión 4.Outputs[Salida de multidifusión 1]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de multidifusión 1"
+                  synchronousInputId="Package\Agregacion\Multidifusión 4.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Agregacion\Multidifusión 5"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multidifusión;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Distribuye cada fila de entrada a cada una de las filas de una o varias salidas. Por ejemplo, se crea una bifurcación de un flujo de datos para realizar una copia de los datos de modo que se puedan enmascarar algunos valores antes de compartirlos con los asociados externos."
+              name="Multidifusión 5">
+              <inputs>
+                <input
+                  refId="Package\Agregacion\Multidifusión 5.Inputs[Entrada de Multidifusión 1]"
+                  name="Entrada de Multidifusión 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Agregacion\Multidifusión 5.Outputs[Salida de Multidifusión 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de Multidifusión 1"
+                  synchronousInputId="Package\Agregacion\Multidifusión 5.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Agregacion\Multidifusión 5.Outputs[Salida de multidifusión 1]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de multidifusión 1"
+                  synchronousInputId="Package\Agregacion\Multidifusión 5.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Agregacion\Multidifusión 6"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multidifusión;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Distribuye cada fila de entrada a cada una de las filas de una o varias salidas. Por ejemplo, se crea una bifurcación de un flujo de datos para realizar una copia de los datos de modo que se puedan enmascarar algunos valores antes de compartirlos con los asociados externos."
+              name="Multidifusión 6">
+              <inputs>
+                <input
+                  refId="Package\Agregacion\Multidifusión 6.Inputs[Entrada de Multidifusión 1]"
+                  name="Entrada de Multidifusión 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Agregacion\Multidifusión 6.Outputs[Salida de Multidifusión 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de Multidifusión 1"
+                  synchronousInputId="Package\Agregacion\Multidifusión 6.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Agregacion\Multidifusión 6.Outputs[Salida de multidifusión 1]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de multidifusión 1"
+                  synchronousInputId="Package\Agregacion\Multidifusión 6.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Agregacion\Multidifusión 7"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multidifusión;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Distribuye cada fila de entrada a cada una de las filas de una o varias salidas. Por ejemplo, se crea una bifurcación de un flujo de datos para realizar una copia de los datos de modo que se puedan enmascarar algunos valores antes de compartirlos con los asociados externos."
+              name="Multidifusión 7">
+              <inputs>
+                <input
+                  refId="Package\Agregacion\Multidifusión 7.Inputs[Entrada de Multidifusión 1]"
+                  name="Entrada de Multidifusión 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Agregacion\Multidifusión 7.Outputs[Salida de Multidifusión 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de Multidifusión 1"
+                  synchronousInputId="Package\Agregacion\Multidifusión 7.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Agregacion\Multidifusión 7.Outputs[Salida de multidifusión 1]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de multidifusión 1"
+                  synchronousInputId="Package\Agregacion\Multidifusión 7.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Agregacion\Promedio"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Agregado;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;3"
+              description="Agrega datos mediante funciones como Average, Sum, Count, Max y Min. Por ejemplo, se agrupan datos para calcular la suma de las ventas por producto o el promedio de visitas por día."
+              name="Promedio"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número aproximado de claves GROUP BY que produce la agregación. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 de valores de clave. No especificado indica que no se usó ningún valor de KeyScale."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el número exacto de claves GROUP BY que produce la agregación. Si se especifica un valor de KeyScale, el valor de Keys tiene prioridad."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número aproximado de valores distintos de una columna que cuenta la agregación de forma distintiva. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 valores de clave. No especificado indica que no se usa ningún valor de CountDistinctScale."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el número exacto de valores distintos de una columna que cuenta la agregación de forma distintiva. Si se especifica un valor de CountDistinctScale, el valor de CountDistinctKeys tiene prioridad."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje en el que puede ampliarse la memoria durante la agregación. Los valores válidos están comprendidos entre 1 y 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Agregacion\Promedio.Inputs[Entrada de agregado 1]"
+                  name="Entrada de agregado 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Agregacion\Promedio.Inputs[Entrada de agregado 1].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      lineageId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Agregacion\Promedio.Outputs[Salida de agregado 1]"
+                  name="Salida de agregado 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el número aproximado de claves GROUP BY que produce la agregación. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 de valores de clave. No especificado indica que no se usó ningún valor de KeyScale."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Especifica el número exacto de claves GROUP BY que produce la agregación. Si se especifica un valor de KeyScale, el valor de Keys tiene prioridad."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Agregacion\Promedio.Outputs[Salida de agregado 1].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Agregacion\Promedio.Outputs[Salida de agregado 1].Columns[UnitPrice]"
+                      name="UnitPrice">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el id. de la columna de entrada usada en la agregación."
+                          name="AggregationColumnId">#{Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el tipo de agregación."
+                          name="AggregationType"
+                          typeConverter="AggregationType">5</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica si la columna requiere tratamiento especial porque puede contener datos de tamaño excesivo o porque requiere mayor precisión que el tipo de datos float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación de cadenas."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Agregacion\Suma"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Agregado;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;3"
+              description="Agrega datos mediante funciones como Average, Sum, Count, Max y Min. Por ejemplo, se agrupan datos para calcular la suma de las ventas por producto o el promedio de visitas por día."
+              name="Suma"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número aproximado de claves GROUP BY que produce la agregación. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 de valores de clave. No especificado indica que no se usó ningún valor de KeyScale."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el número exacto de claves GROUP BY que produce la agregación. Si se especifica un valor de KeyScale, el valor de Keys tiene prioridad."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número aproximado de valores distintos de una columna que cuenta la agregación de forma distintiva. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 valores de clave. No especificado indica que no se usa ningún valor de CountDistinctScale."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el número exacto de valores distintos de una columna que cuenta la agregación de forma distintiva. Si se especifica un valor de CountDistinctScale, el valor de CountDistinctKeys tiene prioridad."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje en el que puede ampliarse la memoria durante la agregación. Los valores válidos están comprendidos entre 1 y 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Agregacion\Suma.Inputs[Entrada de agregado 1]"
+                  name="Entrada de agregado 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Agregacion\Suma.Inputs[Entrada de agregado 1].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      lineageId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Agregacion\Suma.Outputs[Salida de agregado 1]"
+                  name="Salida de agregado 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el número aproximado de claves GROUP BY que produce la agregación. Mínimo indica 500.000 valores de clave, Medio indica 5.000.000 de valores de clave y Alto indica más de 25.000.000 de valores de clave. No especificado indica que no se usó ningún valor de KeyScale."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Especifica el número exacto de claves GROUP BY que produce la agregación. Si se especifica un valor de KeyScale, el valor de Keys tiene prioridad."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Agregacion\Suma.Outputs[Salida de agregado 1].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Agregacion\Suma.Outputs[Salida de agregado 1].Columns[UnitPrice]"
+                      name="UnitPrice">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el id. de la columna de entrada usada en la agregación."
+                          name="AggregationColumnId">#{Package\Agregacion\Data.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el tipo de agregación."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indica si la columna requiere tratamiento especial porque puede contener datos de tamaño excesivo o porque requiere mayor precisión que el tipo de datos float."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación de cadenas."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Agregacion.Paths[Salida de agregado 1]"
+              endId="Package\Agregacion\Multidifusión 5.Inputs[Entrada de Multidifusión 1]"
+              name="Salida de agregado 1"
+              startId="Package\Agregacion\Contar.Outputs[Salida de agregado 1]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de agregado 11]"
+              endId="Package\Agregacion\Multidifusión 1.Inputs[Entrada de Multidifusión 1]"
+              name="Salida de agregado 1"
+              startId="Package\Agregacion\Maximo.Outputs[Salida de agregado 1]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de agregado 12]"
+              endId="Package\Agregacion\Multidifusión 2.Inputs[Entrada de Multidifusión 1]"
+              name="Salida de agregado 1"
+              startId="Package\Agregacion\Minimo.Outputs[Salida de agregado 1]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de agregado 13]"
+              endId="Package\Agregacion\Multidifusión 3.Inputs[Entrada de Multidifusión 1]"
+              name="Salida de agregado 1"
+              startId="Package\Agregacion\Suma.Outputs[Salida de agregado 1]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de agregado 14]"
+              endId="Package\Agregacion\Multidifusión 4.Inputs[Entrada de Multidifusión 1]"
+              name="Salida de agregado 1"
+              startId="Package\Agregacion\Promedio.Outputs[Salida de agregado 1]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de agregado 15]"
+              endId="Package\Agregacion\Multidifusión 7.Inputs[Entrada de Multidifusión 1]"
+              name="Salida de agregado 1"
+              startId="Package\Agregacion\Agrupado.Outputs[Salida de agregado 1]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de agregado 16]"
+              endId="Package\Agregacion\Multidifusión 6.Inputs[Entrada de Multidifusión 1]"
+              name="Salida de agregado 1"
+              startId="Package\Agregacion\ContarD.Outputs[Salida de agregado 1]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de Multidifusión 17]"
+              endId="Package\Agregacion\Maximo.Inputs[Entrada de agregado 1]"
+              name="Salida de Multidifusión 1"
+              startId="Package\Agregacion\Multidifusión.Outputs[Salida de Multidifusión 1]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de multidifusión 1]"
+              endId="Package\Agregacion\Minimo.Inputs[Entrada de agregado 1]"
+              name="Salida de multidifusión 1"
+              startId="Package\Agregacion\Multidifusión.Outputs[Salida de multidifusión 1]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de Multidifusión 16]"
+              endId="Package\Agregacion\Dcontard.Inputs[Entrada de destino de archivo plano]"
+              name="Salida de Multidifusión 1"
+              startId="Package\Agregacion\Multidifusión 6.Outputs[Salida de Multidifusión 1]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de Multidifusión 15]"
+              endId="Package\Agregacion\D agrupado.Inputs[Entrada de destino de archivo plano]"
+              name="Salida de Multidifusión 1"
+              startId="Package\Agregacion\Multidifusión 7.Outputs[Salida de Multidifusión 1]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de Multidifusión 13]"
+              endId="Package\Agregacion\D minimo.Inputs[Entrada de destino de archivo plano]"
+              name="Salida de Multidifusión 1"
+              startId="Package\Agregacion\Multidifusión 2.Outputs[Salida de Multidifusión 1]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de Multidifusión 12]"
+              endId="Package\Agregacion\D suma.Inputs[Entrada de destino de archivo plano]"
+              name="Salida de Multidifusión 1"
+              startId="Package\Agregacion\Multidifusión 3.Outputs[Salida de Multidifusión 1]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de Multidifusión 11]"
+              endId="Package\Agregacion\D promedio.Inputs[Entrada de destino de archivo plano]"
+              name="Salida de Multidifusión 1"
+              startId="Package\Agregacion\Multidifusión 4.Outputs[Salida de Multidifusión 1]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de Multidifusión 1]"
+              endId="Package\Agregacion\D contar.Inputs[Entrada de destino de archivo plano]"
+              name="Salida de Multidifusión 1"
+              startId="Package\Agregacion\Multidifusión 5.Outputs[Salida de Multidifusión 1]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de Multidifusión 14]"
+              endId="Package\Agregacion\D maximo.Inputs[Entrada de destino de archivo plano]"
+              name="Salida de Multidifusión 1"
+              startId="Package\Agregacion\Multidifusión 1.Outputs[Salida de Multidifusión 1]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de multidifusión 2]"
+              endId="Package\Agregacion\Suma.Inputs[Entrada de agregado 1]"
+              name="Salida de multidifusión 2"
+              startId="Package\Agregacion\Multidifusión.Outputs[Salida de multidifusión 2]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de multidifusión 3]"
+              endId="Package\Agregacion\Promedio.Inputs[Entrada de agregado 1]"
+              name="Salida de multidifusión 3"
+              startId="Package\Agregacion\Multidifusión.Outputs[Salida de multidifusión 3]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de multidifusión 4]"
+              endId="Package\Agregacion\Contar.Inputs[Entrada de agregado 1]"
+              name="Salida de multidifusión 4"
+              startId="Package\Agregacion\Multidifusión.Outputs[Salida de multidifusión 4]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de multidifusión 5]"
+              endId="Package\Agregacion\ContarD.Inputs[Entrada de agregado 1]"
+              name="Salida de multidifusión 5"
+              startId="Package\Agregacion\Multidifusión.Outputs[Salida de multidifusión 5]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de multidifusión 6]"
+              endId="Package\Agregacion\Agrupado.Inputs[Entrada de agregado 1]"
+              name="Salida de multidifusión 6"
+              startId="Package\Agregacion\Multidifusión.Outputs[Salida de multidifusión 6]" />
+            <path
+              refId="Package\Agregacion.Paths[Salida de origen de OLE DB]"
+              endId="Package\Agregacion\Multidifusión.Inputs[Entrada de Multidifusión 1]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Agregacion\Data.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\Agregacion"
+          TopLeft="221.666654555334,73.6666661543979" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Agregacion">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\Agregacion\Multidifusión 3"
+          TopLeft="439.999993443489,333.799995395541" />
+        <NodeLayout
+          Size="115.2,41.6"
+          Id="Package\Agregacion\Maximo"
+          TopLeft="39.9999994039536,230.999996557832" />
+        <NodeLayout
+          Size="100,41.6"
+          Id="Package\Agregacion\Data"
+          TopLeft="428.999993607402,71.9999989271164" />
+        <NodeLayout
+          Size="123.2,41.6"
+          Id="Package\Agregacion\Promedio"
+          TopLeft="568.999991521239,235.399996945262" />
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\Agregacion\Multidifusión 7"
+          TopLeft="1154.59998567998,327.799995604157" />
+        <NodeLayout
+          Size="117.6,41.6"
+          Id="Package\Agregacion\D contar"
+          TopLeft="820.999987766147,424.599995723367" />
+        <NodeLayout
+          Size="136.8,41.6"
+          Id="Package\Agregacion\Multidifusión"
+          TopLeft="404.99999396503,152.999997720122" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Agregacion\Dcontard"
+          TopLeft="996.999989494681,420.599995902181" />
+        <NodeLayout
+          Size="114.4,41.6"
+          Id="Package\Agregacion\D suma"
+          TopLeft="458.999993160367,420.599995782971" />
+        <NodeLayout
+          Size="109.6,41.6"
+          Id="Package\Agregacion\Contar"
+          TopLeft="771.999988496304,234.999996975064" />
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\Agregacion\Multidifusión 6"
+          TopLeft="974.399986112118,328.799995589256" />
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\Agregacion\D agrupado"
+          TopLeft="1186.99998684228,413.199995917082" />
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\Agregacion\Multidifusión 1"
+          TopLeft="65.9999990165234,324.999995157123" />
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\Agregacion\Multidifusión 5"
+          TopLeft="806.999987974763,331.999995529652" />
+        <NodeLayout
+          Size="132,41.6"
+          Id="Package\Agregacion\D promedio"
+          TopLeft="640.999990448356,419.599995797873" />
+        <NodeLayout
+          Size="144.8,46.4"
+          Id="Package\Agregacion\Multidifusión 4"
+          TopLeft="637.999990493059,328.399995559454" />
+        <NodeLayout
+          Size="112,41.6"
+          Id="Package\Agregacion\Minimo"
+          TopLeft="215.999996781349,229.999996930361" />
+        <NodeLayout
+          Size="124.8,41.6"
+          Id="Package\Agregacion\D maximo"
+          TopLeft="56.9999991506338,421.999994665384" />
+        <NodeLayout
+          Size="122.4,41.6"
+          Id="Package\Agregacion\D minimo"
+          TopLeft="264.999996051192,416.599995842576" />
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\Agregacion\Multidifusión 2"
+          TopLeft="254.999996200204,326.999995484948" />
+        <NodeLayout
+          Size="105.6,41.6"
+          Id="Package\Agregacion\Suma"
+          TopLeft="387.99999421835,232.799996900559" />
+        <NodeLayout
+          Size="116.8,41.6"
+          Id="Package\Agregacion\ContarD"
+          TopLeft="927.999986171723,241.799996885657" />
+        <NodeLayout
+          Size="123.2,41.6"
+          Id="Package\Agregacion\Agrupado"
+          TopLeft="1072.79998575449,236.799996960163" />
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de Multidifusión 13]"
+          TopLeft="326.799996125698,368.599995484948">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.0000003576278"
+              Start="0,0"
+              End="0,40.5000003576278">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5000003576278" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de Multidifusión 12]"
+          TopLeft="514.299993301928,375.399995395541">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.2000003874302"
+              Start="0,0"
+              End="0,37.7000003874302">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.7000003874302" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de Multidifusión 11]"
+          TopLeft="708.699990470707,374.799995559454">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.8000002384188"
+              Start="0,0"
+              End="0,37.3000002384188">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.3000002384188" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de Multidifusión 1]"
+          TopLeft="879.599987870455,373.599995529652">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.000000193715"
+              Start="0,0"
+              End="0,43.500000193715">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.500000193715" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de agregado 16]"
+          TopLeft="986.399986171723,283.399996885657">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60.3999999403954,45.399998703599"
+              Start="0,0"
+              End="60.3999999403954,37.899998703599">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.6999993517995" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.6999993517995"
+                    Point2="0,22.6999993517995"
+                    Point3="4,22.6999993517995" />
+                  <mssgle:LineSegment
+                    End="56.3999999403954,22.6999993517995" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56.3999999403954,22.6999993517995"
+                    Point2="60.3999999403954,22.6999993517995"
+                    Point3="60.3999999403954,26.6999993517995" />
+                  <mssgle:LineSegment
+                    End="60.3999999403954,37.899998703599" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="22.1999999701977,27.6999993517995,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de agregado 15]"
+          TopLeft="1134.39998575449,278.399996960163">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="92.5999999254946,49.3999986439943"
+              Start="0,0"
+              End="92.5999999254946,41.8999986439943">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.6999993219971" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.6999993219971"
+                    Point2="0,24.6999993219971"
+                    Point3="4,24.6999993219971" />
+                  <mssgle:LineSegment
+                    End="88.5999999254946,24.6999993219971" />
+                  <mssgle:CubicBezierSegment
+                    Point1="88.5999999254946,24.6999993219971"
+                    Point2="92.5999999254946,24.6999993219971"
+                    Point3="92.5999999254946,28.6999993219971" />
+                  <mssgle:LineSegment
+                    End="92.5999999254946,41.8999986439943" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="38.2999999627473,29.6999993219971,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de agregado 14]"
+          TopLeft="630.599991521239,276.999996945262">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="79.7999989718199,51.3999986141919"
+              Start="0,0"
+              End="79.7999989718199,43.8999986141919">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.6999993070959" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.6999993070959"
+                    Point2="0,25.6999993070959"
+                    Point3="4,25.6999993070959" />
+                  <mssgle:LineSegment
+                    End="75.7999989718199,25.6999993070959" />
+                  <mssgle:CubicBezierSegment
+                    Point1="75.7999989718199,25.6999993070959"
+                    Point2="79.7999989718199,25.6999993070959"
+                    Point3="79.7999989718199,29.6999993070959" />
+                  <mssgle:LineSegment
+                    End="79.7999989718199,43.8999986141919" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="31.89999948591,30.6999993070959,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de agregado 13]"
+          TopLeft="440.79999421835,274.399996900559">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="71.5999992251396,59.3999984949827"
+              Start="0,0"
+              End="71.5999992251396,51.8999984949827">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.6999992474913" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.6999992474913"
+                    Point2="0,29.6999992474913"
+                    Point3="4,29.6999992474913" />
+                  <mssgle:LineSegment
+                    End="67.5999992251396,29.6999992474913" />
+                  <mssgle:CubicBezierSegment
+                    Point1="67.5999992251396,29.6999992474913"
+                    Point2="71.5999992251396,29.6999992474913"
+                    Point3="71.5999992251396,33.6999992474913" />
+                  <mssgle:LineSegment
+                    End="71.5999992251396,51.8999984949827" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="27.7999996125698,34.6999992474913,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de agregado 12]"
+          TopLeft="271.999996781349,271.599996930361">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="55.3999994188548,55.3999985545875"
+              Start="0,0"
+              End="55.3999994188548,47.8999985545875">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.6999992772937" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.6999992772937"
+                    Point2="0,27.6999992772937"
+                    Point3="4,27.6999992772937" />
+                  <mssgle:LineSegment
+                    End="51.3999994188548,27.6999992772937" />
+                  <mssgle:CubicBezierSegment
+                    Point1="51.3999994188548,27.6999992772937"
+                    Point2="55.3999994188548,27.6999992772937"
+                    Point3="55.3999994188548,31.6999992772937" />
+                  <mssgle:LineSegment
+                    End="55.3999994188548,47.8999985545875" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="19.6999997094274,32.6999992772937,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de agregado 11]"
+          TopLeft="97.5999994039536,272.599996557832">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40.7999996125698,52.3999985992911"
+              Start="0,0"
+              End="40.7999996125698,44.8999985992911">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1999992996456" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.1999992996456"
+                    Point2="0,26.1999992996456"
+                    Point3="4,26.1999992996456" />
+                  <mssgle:LineSegment
+                    End="36.7999996125698,26.1999992996456" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.7999996125698,26.1999992996456"
+                    Point2="40.7999996125698,26.1999992996456"
+                    Point3="40.7999996125698,30.1999992996456" />
+                  <mssgle:LineSegment
+                    End="40.7999996125698,44.8999985992911" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="12.3999998062849,31.1999992996456,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de agregado 1]"
+          TopLeft="826.799988496304,276.599996975064">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52.5999994784596,55.3999985545873"
+              Start="0,0"
+              End="52.5999994784596,47.8999985545873">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.6999992772937" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.6999992772937"
+                    Point2="0,27.6999992772937"
+                    Point3="4,27.6999992772937" />
+                  <mssgle:LineSegment
+                    End="48.5999994784596,27.6999992772937" />
+                  <mssgle:CubicBezierSegment
+                    Point1="48.5999994784596,27.6999992772937"
+                    Point2="52.5999994784596,27.6999992772937"
+                    Point3="52.5999994784596,31.6999992772937" />
+                  <mssgle:LineSegment
+                    End="52.5999994784596,47.8999985545873" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="18.2999997392298,32.6999992772937,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de origen de OLE DB]"
+          TopLeft="476.199993786216,113.599998927116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.399998793006"
+              Start="0,0"
+              End="0,31.899998793006">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.899998793006" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,7.94999939650302,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de multidifusión 6]"
+          TopLeft="521.69999396503,194.599997720122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="612.69999178946,42.1999992400408"
+              Start="0,0"
+              End="612.69999178946,34.6999992400408">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,5.58440660706008" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,5.58440660706008"
+                    Point2="0,9.58440660706008"
+                    Point3="4,9.58440660706008" />
+                  <mssgle:LineSegment
+                    End="608.69999178946,9.58440660706008" />
+                  <mssgle:CubicBezierSegment
+                    Point1="608.69999178946,9.58440660706008"
+                    Point2="612.69999178946,9.58440660706008"
+                    Point3="612.69999178946,13.5844066070601" />
+                  <mssgle:LineSegment
+                    End="612.69999178946,34.6999992400408" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de multidifusión 5]"
+          TopLeft="519.39999396503,194.599997720122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="466.999992206693,47.1999991655349"
+              Start="0,0"
+              End="466.999992206693,39.6999991655349">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.6440526575769" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.6440526575769"
+                    Point2="0,11.6440526575769"
+                    Point3="4,11.6440526575769" />
+                  <mssgle:LineSegment
+                    End="462.999992206693,11.6440526575769" />
+                  <mssgle:CubicBezierSegment
+                    Point1="462.999992206693,11.6440526575769"
+                    Point2="466.999992206693,11.6440526575769"
+                    Point3="466.999992206693,15.6440526575769" />
+                  <mssgle:LineSegment
+                    End="466.999992206693,39.6999991655349" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de multidifusión 4]"
+          TopLeft="516.333327298363,194.599997720122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="310.46666119794,40.3999992549419"
+              Start="0,0"
+              End="310.46666119794,32.8999992549419">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,6.96079525240611" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,6.96079525240611"
+                    Point2="0,10.9607952524061"
+                    Point3="4,10.9607952524061" />
+                  <mssgle:LineSegment
+                    End="306.46666119794,10.9607952524061" />
+                  <mssgle:CubicBezierSegment
+                    Point1="306.46666119794,10.9607952524061"
+                    Point2="310.46666119794,10.9607952524061"
+                    Point3="310.46666119794,14.9607952524061" />
+                  <mssgle:LineSegment
+                    End="310.46666119794,32.8999992549419" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de multidifusión 3]"
+          TopLeft="512.03999396503,194.599997720122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="118.559997556209,40.7999992251395"
+              Start="0,0"
+              End="118.559997556209,33.2999992251395">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.36968191666818" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.36968191666818"
+                    Point2="0,12.3696819166682"
+                    Point3="4,12.3696819166682" />
+                  <mssgle:LineSegment
+                    End="114.559997556209,12.3696819166682" />
+                  <mssgle:CubicBezierSegment
+                    Point1="114.559997556209,12.3696819166682"
+                    Point2="118.559997556209,12.3696819166682"
+                    Point3="118.559997556209,16.3696819166682" />
+                  <mssgle:LineSegment
+                    End="118.559997556209,33.2999992251395" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de multidifusión 2]"
+          TopLeft="486.27999396503,194.599997720122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-45.4799997466802,38.1999991804361"
+              Start="0,0"
+              End="-45.4799997466802,30.6999991804361">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.1147833642496" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.1147833642496"
+                    Point2="0,17.1147833642496"
+                    Point3="-4,17.1147833642496" />
+                  <mssgle:LineSegment
+                    End="-41.4799997466802,17.1147833642496" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-41.4799997466802,17.1147833642496"
+                    Point2="-45.4799997466802,17.1147833642496"
+                    Point3="-45.4799997466802,21.1147833642496" />
+                  <mssgle:LineSegment
+                    End="-45.4799997466802,30.6999991804361" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de Multidifusión 17]"
+          TopLeft="434.75999396503,194.599997720122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-337.159994561076,36.3999988377092"
+              Start="0,0"
+              End="-337.159994561076,28.8999988377092">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.03569646913433" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.03569646913433"
+                    Point2="0,11.0356964691343"
+                    Point3="-4,11.0356964691343" />
+                  <mssgle:LineSegment
+                    End="-333.159994561076,11.0356964691343" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-333.159994561076,11.0356964691343"
+                    Point2="-337.159994561076,11.0356964691343"
+                    Point3="-337.159994561076,15.0356964691343" />
+                  <mssgle:LineSegment
+                    End="-337.159994561076,28.8999988377092" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de multidifusión 1]"
+          TopLeft="460.51999396503,194.599997720122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-188.519997183681,35.3999992102383"
+              Start="0,0"
+              End="-188.519997183681,27.8999992102383">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.8602966119467" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.8602966119467"
+                    Point2="0,15.8602966119467"
+                    Point3="-4,15.8602966119467" />
+                  <mssgle:LineSegment
+                    End="-184.519997183681,15.8602966119467" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-184.519997183681,15.8602966119467"
+                    Point2="-188.519997183681,15.8602966119467"
+                    Point3="-188.519997183681,19.8602966119467" />
+                  <mssgle:LineSegment
+                    End="-188.519997183681,27.8999992102383" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de Multidifusión 16]"
+          TopLeft="1046.79998611212,370.399995589256">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.6000033825635,50.2000003129244"
+              Start="0,0"
+              End="10.6000033825635,42.7000003129244">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.1000001564622" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.1000001564622"
+                    Point2="0,25.1000001564622"
+                    Point3="4,25.1000001564622" />
+                  <mssgle:LineSegment
+                    End="6.6000033825635,25.1000001564622" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.6000033825635,25.1000001564622"
+                    Point2="10.6000033825635,25.1000001564622"
+                    Point3="10.6000033825635,29.1000001564622" />
+                  <mssgle:LineSegment
+                    End="10.6000033825635,42.7000003129244" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de Multidifusión 15]"
+          TopLeft="1226.99998567998,369.399995604157">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.4000011622907,43.8000003129243"
+              Start="0,0"
+              End="26.4000011622907,36.3000003129243">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.9000001564622" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.9000001564622"
+                    Point2="0,21.9000001564622"
+                    Point3="4,21.9000001564622" />
+                  <mssgle:LineSegment
+                    End="22.4000011622907,21.9000001564622" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.4000011622907,21.9000001564622"
+                    Point2="26.4000011622907,21.9000001564622"
+                    Point3="26.4000011622907,25.9000001564622" />
+                  <mssgle:LineSegment
+                    End="26.4000011622907,36.3000003129243" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Agregacion.Paths[Salida de Multidifusión 14]"
+          TopLeft="138.399999016523,366.599995157123">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-18.9999998658896,55.399999508261"
+              Start="0,0"
+              End="-18.9999998658896,47.899999508261">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.6999997541305" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.6999997541305"
+                    Point2="0,27.6999997541305"
+                    Point3="-4,27.6999997541305" />
+                  <mssgle:LineSegment
+                    End="-14.9999998658896,27.6999997541305" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-14.9999998658896,27.6999997541305"
+                    Point2="-18.9999998658896,27.6999997541305"
+                    Point3="-18.9999998658896,31.6999997541305" />
+                  <mssgle:LineSegment
+                    End="-18.9999998658896,47.899999508261" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Agregacion\Data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,1122 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/19/2023 5:19:23 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-LENAR"
+  DTS:CreatorName="DESKTOP-LENAR\Lenar"
+  DTS:DTSID="{AD8E978D-8457-490D-8BF1-788D8AF162D5}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5209.0"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Ordenar"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{9EDEE9E6-0221-4BF3-8F37-6914E0D36A27}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2900EA5A-A770-474B-9BB9-9FFFCAA2B74E}"
+      DTS:ObjectName="LocalHost.AdventureWorksDW2016">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=AdventureWorksDW2016;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Ordenar-{2900EA5A-A770-474B-9BB9-9FFFCAA2B74E}LocalHost.AdventureWorksDW2016;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Reporte Ascendente]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{BB3DC90D-54B2-4DE6-A0C7-AA5C43868309}"
+      DTS:ObjectName="Reporte Ascendente">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Apps\SSTD\Laboratorio2\Ordenar\Repprte Ordenar 1.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishProductName"
+              DTS:DTSID="{3A25AB37-3347-4A7C-8038-116C99019A7C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishProductCategoryName"
+              DTS:DTSID="{F9DA2830-2B6D-42F1-A0AF-9FEECD360B9C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishProductSubcategoryName"
+              DTS:DTSID="{64FB5D56-4787-4D7D-B75F-E4AE4A706BE1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitPrice"
+              DTS:DTSID="{EDD5E607-26A4-4102-A151-26D23DA106B1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalesAmount"
+              DTS:DTSID="{4C69E930-AA9C-409E-A175-B51584C8C7D4}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Reporte Descendente]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{BB2741CE-AD31-41D1-AC8C-67392A642210}"
+      DTS:ObjectName="Reporte Descendente">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Apps\SSTD\Laboratorio2\Ordenar\Reporte ordenar.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishProductName"
+              DTS:DTSID="{3F12B5ED-5D53-4E28-9649-EE409E4986BE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishProductCategoryName"
+              DTS:DTSID="{2581F4ED-620B-41EC-AE8E-68737F074916}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishProductSubcategoryName"
+              DTS:DTSID="{79062864-DF5A-4A67-B02B-001DB931673C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitPrice"
+              DTS:DTSID="{1EAF806F-0E61-475B-8216-7664DBA78915}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalesAmount"
+              DTS:DTSID="{4C0C143A-4472-4ACB-AF80-AAB67C6C2F0B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{275B6E91-0DC6-428C-A76C-34D9B01767D1}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Flujo de datos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{40CE4C29-70A4-4B20-BC19-C1131B183F2A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Flujo de datos"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tarea Flujo de datos\Destino de archivo plano"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="Destino de archivo plano"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Destino de archivo plano.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Reporte Ascendente]"
+                  connectionManagerRefId="Package.ConnectionManagers[Reporte Ascendente]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[EnglishProductSubcategoryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductSubcategoryName"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishProductSubcategoryName]"
+                      lineageId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].Columns[EnglishProductSubcategoryName]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[SalesAmount]"
+                      cachedDataType="cy"
+                      cachedName="SalesAmount"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[SalesAmount]"
+                      lineageId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].Columns[SalesAmount]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishProductName]"
+                      lineageId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].Columns[EnglishProductName]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[EnglishProductCategoryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductCategoryName"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishProductCategoryName]"
+                      lineageId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].Columns[EnglishProductCategoryName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishProductCategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductCategoryName" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductSubcategoryName" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[SalesAmount]"
+                      dataType="cy"
+                      name="SalesAmount" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Extar Datos2"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Extar Datos2"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DP.EnglishProductName, DPC.EnglishProductCategoryName,
+		DPS.EnglishProductSubcategoryName, FRS.UnitPrice, FRS.SalesAmount
+FROM DimProduct DP INNER JOIN DimProductSubcategory DPS
+ON DP.ProductSubcategoryKey = DPS.ProductCategoryKey
+					INNER JOIN DimProductCategory DPC
+ON DPC.ProductCategoryKey=DPS.ProductCategoryKey
+					INNER JOIN FactResellerSales FRS
+ON FRS.ProductKey=DP.ProductKey
+ORDER BY DP.EnglishProductName, 
+DPC.EnglishProductCategoryName ASC</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Extar Datos2.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB]"
+                  isSorted="true"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishProductName]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].Columns[EnglishProductName]"
+                      name="EnglishProductName"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].Columns[EnglishProductCategoryName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishProductCategoryName]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].Columns[EnglishProductCategoryName]"
+                      name="EnglishProductCategoryName"
+                      sortKeyPosition="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].Columns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishProductSubcategoryName]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].Columns[EnglishProductSubcategoryName]"
+                      name="EnglishProductSubcategoryName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]"
+                      name="UnitPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].Columns[SalesAmount]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].ExternalColumns[SalesAmount]"
+                      lineageId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].Columns[SalesAmount]"
+                      name="SalesAmount"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishProductCategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductCategoryName" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductSubcategoryName" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB].ExternalColumns[SalesAmount]"
+                      dataType="cy"
+                      name="SalesAmount" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de error de origen de OLE DB].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de error de origen de OLE DB].Columns[EnglishProductName]"
+                      name="EnglishProductName" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de error de origen de OLE DB].Columns[EnglishProductCategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de error de origen de OLE DB].Columns[EnglishProductCategoryName]"
+                      name="EnglishProductCategoryName" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de error de origen de OLE DB].Columns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de error de origen de OLE DB].Columns[EnglishProductSubcategoryName]"
+                      name="EnglishProductSubcategoryName" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de error de origen de OLE DB].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de error de origen de OLE DB].Columns[UnitPrice]"
+                      name="UnitPrice" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de error de origen de OLE DB].Columns[SalesAmount]"
+                      dataType="cy"
+                      lineageId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de error de origen de OLE DB].Columns[SalesAmount]"
+                      name="SalesAmount" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Extraer datos"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Extraer datos"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DP.EnglishProductName, DPC.EnglishProductCategoryName,
+		DPS.EnglishProductSubcategoryName, FRS.UnitPrice, FRS.SalesAmount
+FROM DimProduct DP INNER JOIN DimProductSubcategory DPS
+ON DP.ProductSubcategoryKey = DPS.ProductCategoryKey
+					INNER JOIN DimProductCategory DPC
+ON DPC.ProductCategoryKey=DPS.ProductCategoryKey
+					INNER JOIN FactResellerSales FRS
+ON FRS.ProductKey=DP.ProductKey</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Extraer datos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishProductName]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].Columns[EnglishProductName]"
+                      name="EnglishProductName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].Columns[EnglishProductCategoryName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishProductCategoryName]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].Columns[EnglishProductCategoryName]"
+                      name="EnglishProductCategoryName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].Columns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishProductSubcategoryName]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].Columns[EnglishProductSubcategoryName]"
+                      name="EnglishProductSubcategoryName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]"
+                      name="UnitPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].Columns[SalesAmount]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].ExternalColumns[SalesAmount]"
+                      lineageId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].Columns[SalesAmount]"
+                      name="SalesAmount"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishProductCategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductCategoryName" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].ExternalColumns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductSubcategoryName" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].ExternalColumns[SalesAmount]"
+                      dataType="cy"
+                      name="SalesAmount" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de error de origen de OLE DB].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de error de origen de OLE DB].Columns[EnglishProductName]"
+                      name="EnglishProductName" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de error de origen de OLE DB].Columns[EnglishProductCategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de error de origen de OLE DB].Columns[EnglishProductCategoryName]"
+                      name="EnglishProductCategoryName" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de error de origen de OLE DB].Columns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de error de origen de OLE DB].Columns[EnglishProductSubcategoryName]"
+                      name="EnglishProductSubcategoryName" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de error de origen de OLE DB].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de error de origen de OLE DB].Columns[UnitPrice]"
+                      name="UnitPrice" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de error de origen de OLE DB].Columns[SalesAmount]"
+                      dataType="cy"
+                      lineageId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de error de origen de OLE DB].Columns[SalesAmount]"
+                      name="SalesAmount" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Ordenar"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Ordenar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Ordena los datos de entrada de manera ascendente o descendente cuando no es posible ordenarlos en su origen. Por ejemplo, se ordenan los datos de ventas por 'id. de cliente' antes de que se escriban en un archivo plano y se entreguen a otro departamento. Nota: no se recomienda realizar esta transformación para grandes flujos de datos."
+              name="Ordenar"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si la transformación Ordenar quita filas con valores de ordenación duplicados."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número máximo de subprocesos que se deben usar para la ordenación."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación]"
+                  name="Entrada de ordenación">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      lineageId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].Columns[EnglishProductName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">-1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[EnglishProductCategoryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductCategoryName"
+                      lineageId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].Columns[EnglishProductCategoryName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">-2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[EnglishProductSubcategoryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductSubcategoryName"
+                      lineageId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].Columns[EnglishProductSubcategoryName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      lineageId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[SalesAmount]"
+                      cachedDataType="cy"
+                      cachedName="SalesAmount"
+                      lineageId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].Columns[SalesAmount]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación]"
+                  isSorted="true"
+                  name="Salida de ordenación">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[EnglishProductName]"
+                      name="EnglishProductName"
+                      sortKeyPosition="-1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].Columns[EnglishProductName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[EnglishProductCategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[EnglishProductCategoryName]"
+                      name="EnglishProductCategoryName"
+                      sortKeyPosition="-2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].Columns[EnglishProductCategoryName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[EnglishProductSubcategoryName]"
+                      name="EnglishProductSubcategoryName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].Columns[EnglishProductSubcategoryName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[UnitPrice]"
+                      name="UnitPrice">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[SalesAmount]"
+                      dataType="cy"
+                      lineageId="Package\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[SalesAmount]"
+                      name="SalesAmount">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB].Columns[SalesAmount]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Reporte Descendente"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="Reporte Descendente"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Reporte Descendente.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Reporte Descendente]"
+                  connectionManagerRefId="Package.ConnectionManagers[Reporte Descendente]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Reporte Descendente.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Reporte Descendente.Inputs[Entrada de destino de archivo plano].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      cachedSortKeyPosition="-1"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Reporte Descendente.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishProductName]"
+                      lineageId="Package\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[EnglishProductName]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Reporte Descendente.Inputs[Entrada de destino de archivo plano].Columns[EnglishProductCategoryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductCategoryName"
+                      cachedSortKeyPosition="-2"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Reporte Descendente.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishProductCategoryName]"
+                      lineageId="Package\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[EnglishProductCategoryName]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Reporte Descendente.Inputs[Entrada de destino de archivo plano].Columns[EnglishProductSubcategoryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductSubcategoryName"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Reporte Descendente.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishProductSubcategoryName]"
+                      lineageId="Package\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[EnglishProductSubcategoryName]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Reporte Descendente.Inputs[Entrada de destino de archivo plano].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Reporte Descendente.Inputs[Entrada de destino de archivo plano].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Reporte Descendente.Inputs[Entrada de destino de archivo plano].Columns[SalesAmount]"
+                      cachedDataType="cy"
+                      cachedName="SalesAmount"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Reporte Descendente.Inputs[Entrada de destino de archivo plano].ExternalColumns[SalesAmount]"
+                      lineageId="Package\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[SalesAmount]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Reporte Descendente.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Reporte Descendente.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishProductCategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductCategoryName" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Reporte Descendente.Inputs[Entrada de destino de archivo plano].ExternalColumns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductSubcategoryName" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Reporte Descendente.Inputs[Entrada de destino de archivo plano].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Reporte Descendente.Inputs[Entrada de destino de archivo plano].ExternalColumns[SalesAmount]"
+                      dataType="cy"
+                      name="SalesAmount" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de ordenación]"
+              endId="Package\Tarea Flujo de datos\Reporte Descendente.Inputs[Entrada de destino de archivo plano]"
+              name="Salida de ordenación"
+              startId="Package\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
+              endId="Package\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Tarea Flujo de datos\Extraer datos.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de origen de OLE DB1]"
+              endId="Package\Tarea Flujo de datos\Destino de archivo plano.Inputs[Entrada de destino de archivo plano]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Tarea Flujo de datos\Extar Datos2.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Tarea Flujo de datos"
+          TopLeft="134.166659336124,69.333332851198" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Tarea Flujo de datos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Tarea Flujo de datos\Extraer datos"
+          TopLeft="275.99999588728,78.9999988228083" />
+        <NodeLayout
+          Size="116.8,41.6"
+          Id="Package\Tarea Flujo de datos\Ordenar"
+          TopLeft="284.999995753169,184.999997243285" />
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Tarea Flujo de datos\Reporte Descendente"
+          TopLeft="259.999996125698,285.999995738268" />
+        <NodeLayout
+          Size="192.8,41.6"
+          Id="Package\Tarea Flujo de datos\Destino de archivo plano"
+          TopLeft="532.999992057681,188.999997183681" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Tarea Flujo de datos\Extar Datos2"
+          TopLeft="564.999991580844,70.9999989420175" />
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
+          TopLeft="344.699995820224,120.599998822808">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.399998420477"
+              Start="0,0"
+              End="0,56.899998420477">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.899998420477" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de ordenación]"
+          TopLeft="346.499995939434,226.599997243285">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.3999984949827"
+              Start="0,0"
+              End="0,51.8999984949827">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.8999984949827" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de OLE DB1]"
+          TopLeft="631.799991819263,112.599998942018">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,76.399998241663"
+              Start="0,0"
+              End="0,68.899998241663">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.899998241663" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Extraer datos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Extar Datos2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
